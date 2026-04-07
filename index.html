@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anteam</title>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="tailwind.config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#131313]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-b border-white/5">
+<a href="#" class="flex items-center gap-3">
+<img src="assets/anteam_logo.png" alt="Anteam" class="h-8 w-auto"/>
+<span class="text-2xl font-bold tracking-tighter text-[#F3AC13]">Anteam</span>
+</a>
+<div class="hidden md:flex gap-10">
+<a class="font-['Space_Grotesk'] tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-[#F3AC13] transition-colors" href="#philosophy">Philosophy</a>
+<a class="font-['Space_Grotesk'] tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-[#F3AC13] transition-colors" href="#case-studies">Case Studies</a>
+</div>
+<a href="#contact" class="font-['Space_Grotesk'] tracking-widest uppercase text-sm px-6 py-2 bg-[#F3AC13]/10 border border-[#F3AC13]/30 text-[#F3AC13] hover:bg-[#F3AC13] hover:text-on-primary transition-all duration-300 active:scale-95">
+        Contact Us
+    </a>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[120vh] pt-20 overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.4] contrast-[1.1]" alt="Cinematic wide shot of a shipping container terminal at blue hour with cool atmospheric lighting and glowing orange industrial safety lights" src="assets/hero.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<!-- HUD Elements Decoration -->
+<div class="absolute inset-0 pointer-events-none hud-grid opacity-30"></div>
+<div class="absolute top-1/4 right-10 w-[400px] h-[400px] border border-tertiary/10 rounded-full flex items-center justify-center opacity-20">
+<div class="w-[300px] h-[300px] border border-tertiary/20 rounded-full animate-pulse"></div>
+</div>
+<!-- Hero Content -->
+<div class="container mx-auto px-8 relative z-10 flex items-center min-h-[calc(100vh-5rem)]">
+<div class="max-w-4xl space-y-8">
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-none">
+                Logistics<br/>
+<span class="text-on-surface-variant">Re-imagined.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl font-light leading-relaxed">
+                We apply advanced machine learning to logistics networks to find the hidden margins. From the NHS to general freight, we've already proven that smarter systems save more than just time—it saves your bottom line. </p>
+<div class="flex flex-wrap gap-6 pt-4">
+<a href="#case-studies" class="bg-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all shadow-[0_0_40px_rgba(243,172,19,0.3)]">
+                    See our Impact
+                </a>
+<a href="#contact" class="bg-transparent border border-outline-variant hover:bg-surface-container-highest text-on-surface px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm transition-all">
+                    Get in Touch
+                </a>
+</div>
+<div class="pt-8 border-t border-white/10">
+<p class="text-xs font-mono text-on-surface-variant/40 uppercase tracking-widest mb-4">Backed by</p>
+<div class="flex items-center gap-8">
+<img src="assets/innov_uk_logo.jpg" alt="Innovate UK" class="h-12 object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"/>
+<img src="assets/dft-logo.webp" alt="Department for Transport" class="h-12 object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy: Grounded Futurism -->
+<section id="philosophy" class="py-24 relative overflow-hidden bg-surface-dim">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 space-y-10 order-2 lg:order-1">
+<div class="space-y-4">
+<span class="text-primary font-label text-xs uppercase tracking-widest">Our Mission</span>
+<h2 class="text-5xl font-headline font-bold tracking-tight">Philosophy</h2>
+</div>
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">
+Making Fleets Smarter Through Data Driven Decision Making
+</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4 group">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="hub">hub</span>
+<div>
+<h4 class="font-headline font-semibold text-lg">Zero Friction</h4>
+<p class="text-sm text-on-surface-variant">Our software sits on top of existing systems and integrates seamlessly with your pre-existing software, eliminating the need for a complex migration. </p>
+</div>
+</div>
+<div class="flex items-start gap-4 group">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="timeline">timeline</span>
+<div>
+<h4 class="font-headline font-semibold text-lg">Bespoke Solutions</h4>
+<p class="text-sm text-on-surface-variant">We work closely with logistic partners to understand their specific pain points and how our expertise can be applied to address this. </p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 relative order-1 lg:order-2">
+<div class="relative z-10 aspect-[4/3] overflow-hidden rounded-sm bg-surface-container">
+<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.jpg"/>
+<!-- Overlay HUD Layer -->
+<div class="absolute inset-0 pointer-events-none p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="w-24 h-px bg-primary/60"></div>
+<div class="text-[10px] font-mono text-primary/80">LAT: 51.5074° N<br/>LON: 0.1278° W</div>
+</div>
+<div class="relative">
+<!-- Minimalist Route Graph -->
+<svg class="w-full h-32 stroke-primary/40 fill-none" viewbox="0 0 400 100">
+<path d="M0 80 Q 50 10 100 60 T 200 40 T 300 90 T 400 20" stroke-width="0.5"></path>
+<circle cx="100" cy="60" fill="#F3AC13" r="3"></circle>
+<circle cx="300" cy="90" fill="#F3AC13" r="3"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-primary/20 pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Expanded Case Studies Section -->
+<section id="case-studies" class="py-24 bg-surface space-y-32">
+<div class="container mx-auto px-8">
+<div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="space-y-4">
+<span class="text-primary font-label text-xs uppercase tracking-widest">Case Studies</span>
+<h2 class="text-5xl font-headline font-bold tracking-tight">Our Impact</h2>
+</div>
+</div>
+<!-- Case Study 01: The Iron Vein -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7 space-y-8">
+<div class="space-y-4">
+<span class="text-primary font-mono text-xs uppercase tracking-widest opacity-60">Last Mile Optimisation</span>
+<h3 class="text-4xl font-headline font-bold">NHS Hospitals UK</h3>
+</div>
+<div class="relative aspect-video overflow-hidden border border-outline-variant/20 group">
+<img class="w-full h-full object-cover grayscale-[0.5] opacity-85 group-hover:opacity-95 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.jpg"/>
+<div class="absolute inset-0 pointer-events-none hud-grid opacity-20"></div>
+</div>
+<div class="prose prose-invert max-w-none">
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">
+                        During an 8 week trial, Anteam worked closely with NHS Hospitals and a major UK pharmacy chain. Anteam’s patent pending route optimisation algorithm was deployed to optimise last mile deliveries in the network. The algorithm efficiently processed over 100,000 weekly deliveries split over 1000 vehicles, and was able to deliver huge efficiency gains for the stakeholders involved. </p>
+</div>
+</div>
+<div id="metrics-panel" class="lg:col-span-5 bg-surface-container-low border border-outline-variant/10 p-8">
+<div class="flex items-center gap-2 mb-8">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<span class="font-label text-xs uppercase tracking-widest text-primary">Metrics</span>
+</div>
+<div class="flex flex-col divide-y divide-outline-variant/10">
+<div class="py-6 first:pt-0 flex items-center gap-6">
+<div class="flex items-center gap-3 text-6xl font-headline font-bold text-primary shrink-0"><span class="text-2xl">↑</span><span class="counter" data-target="40" data-suffix="%">0%</span></div>
+<div>
+<div class="text-xs font-mono text-on-surface-variant/60 uppercase tracking-widest">Fleet Utilisation</div>
+<div class="text-sm text-on-surface-variant font-light mt-1">More of the fleet working harder, with less idle time between runs.</div>
+</div>
+</div>
+<div class="py-6 flex items-center gap-6">
+<div class="flex items-center gap-3 text-6xl font-headline font-bold text-tertiary shrink-0"><span class="text-2xl">↓</span><span class="counter" data-target="60" data-suffix="%">0%</span></div>
+<div>
+<div class="text-xs font-mono text-on-surface-variant/60 uppercase tracking-widest">Cost Reduction</div>
+<div class="text-sm text-on-surface-variant font-light mt-1">Smarter routing cuts operational costs without cutting corners.</div>
+</div>
+</div>
+<div class="py-6 last:pb-0 flex items-center gap-6">
+<div class="flex items-center gap-3 text-6xl font-headline font-bold text-on-surface shrink-0"><span class="text-2xl">↓</span><span class="counter" data-target="85" data-suffix="%">0%</span></div>
+<div>
+<div class="text-xs font-mono text-on-surface-variant/60 uppercase tracking-widest">CO₂ Savings</div>
+<div class="text-sm text-on-surface-variant font-light mt-1">Fewer empty legs and shorter routes dramatically reduce emissions.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 02: Urban Pulse -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
+<div class="lg:col-span-6 lg:order-2 space-y-8">
+<div class="space-y-4">
+<span class="text-primary font-mono text-xs uppercase tracking-widest opacity-60">AI Quoting Calculator</span>
+<h3 class="text-4xl font-headline font-bold">Baxter Freight</h3>
+</div>
+<div class="prose prose-invert max-w-none space-y-6">
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">
+Anteam developed an AI-powered quoting calculator for the freight-forwarding company Baxter Freight. The tool analyses historical order data and analyses patterns to generate accurate, data-driven quotes, with supplier recommendations in real time. By replacing the manual calculation and research process, Baxter Freight is able to respond to customer enquiries faster, more consistently and with a reduced risk for human error. 
+</p>
+</div>
+</div>
+<div class="lg:col-span-6 lg:order-1 relative">
+<div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative border border-primary/20">
+<img class="w-full h-full object-cover opacity-65" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_2.jpg"/>
+</div>
+</div>
+</div>
+
+<!-- Case Study 03: Urban Pulse -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
+
+<div class="lg:col-span-6 lg:order-1 space-y-8">
+<div class="space-y-4">
+<span class="text-primary font-mono text-xs uppercase tracking-widest opacity-60">Route Optimisation</span>
+<h3 class="text-4xl font-headline font-bold">Welch Group</h3>
+</div>
+<div class="prose prose-invert max-w-none space-y-6">
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">
+Anteam applied their advanced route-matching algorithm as an intelligent layer on top of Welch’s existing scheduling systems. The algorithm analyses planned routes and delivery schedules to identify inefficient empty legs.
+</p>
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">
+By detecting these gaps, the system automatically matches them with suitable orders from other suppliers, effectively filling unused capacity and maximising vehicle utilisation. This not only reduces wasted mileage and fuel consumption but also unlocks new revenue opportunities from journeys that would previously generate no return. 
+</p>
+
+</div>
+</div>
+
+<div class="lg:col-span-6 lg:order-2 relative">
+<div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-75" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.jpg"/>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 bg-surface-dim border-t border-primary/10">
+<div class="container mx-auto px-8 max-w-4xl">
+<div class="text-center mb-16 space-y-4">
+<span class="text-primary font-label text-xs uppercase tracking-widest">Get in Touch</span>
+<h2 class="text-5xl font-headline font-bold tracking-tight">Let's Talk</h2>
+<p class="text-lg text-on-surface-variant font-light max-w-xl mx-auto leading-relaxed">Book a free 15-minute call with us. Tell us where the friction is — we'll show you how AI can take it away.</p>
+</div>
+<form action="contact.php" method="POST" class="space-y-8 bg-surface-container-lowest p-10 border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">Your Name</label>
+<input name="name" class="w-full px-4 py-3 border border-outline-variant/40 bg-surface focus:outline-none transition-colors font-body text-sm" placeholder="John Smith" type="text" required/>
+</div>
+<div class="space-y-2">
+<label class="block font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">Company</label>
+<input name="company" class="w-full px-4 py-3 border border-outline-variant/40 bg-surface focus:outline-none transition-colors font-body text-sm" placeholder="Acme Logistics Ltd" type="text"/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="block font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">Email</label>
+<input name="email" class="w-full px-4 py-3 border border-outline-variant/40 bg-surface focus:outline-none transition-colors font-body text-sm" placeholder="john@acmelogistics.com" type="email" required/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="block font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">What's your biggest challenge right now?</label>
+<textarea name="message" class="w-full px-4 py-3 border border-outline-variant/40 bg-surface focus:outline-none transition-colors font-body text-sm h-32 resize-none" placeholder="Tell us about the inefficiencies, costs, or bottlenecks you're dealing with..."></textarea>
+</div>
+</div>
+<div class="pt-4 flex justify-center">
+<button type="submit" class="px-16 py-4 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(243,172,19,0.2)]">
+    Book a Call
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#131313] border-t border-[#B5C8DF]/10">
+<div class="flex flex-col items-center md:items-start gap-2">
+<a href="#" class="flex items-center gap-3">
+<img src="assets/anteam_logo.png" alt="Anteam" class="h-7 w-auto"/>
+<span class="font-['Space_Grotesk'] text-lg font-black text-[#F3AC13]">ANTEAM</span>
+</a>
+<div class="font-['Inter'] text-xs tracking-wide text-[#C4C7C7]">© 2026 ANTEAM LTD</div>
+</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs tracking-wide text-[#C4C7C7] hover:text-[#F3AC13] underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="privacy-policy.html">Privacy Policy</a>
+</div>
+</footer>
+<script src="main.js"></script>
+</body></html>
