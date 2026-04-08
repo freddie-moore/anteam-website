@@ -6,9 +6,8 @@
 <title>Anteam</title>
 <meta name="description" content="Anteam applies advanced machine learning to logistics networks to reduce costs, cut emissions, and maximise fleet utilisation. Backed by Innovate UK and the Department for Transport."/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
@@ -30,7 +29,7 @@
 <section class="relative min-h-[120vh] pt-20 overflow-hidden">
 <!-- Background Image with Overlay -->
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover grayscale-[0.4] contrast-[1.1]" alt="Cinematic wide shot of a shipping container terminal at blue hour with cool atmospheric lighting and glowing orange industrial safety lights" src="assets/hero.webp" fetchpriority="high"/>
+<img class="w-full h-full object-cover grayscale-[0.4] contrast-[1.1]" alt="Cinematic wide shot of a shipping container terminal at blue hour with cool atmospheric lighting and glowing orange industrial safety lights" src="assets/hero.webp" srcset="assets/hero-960.webp 960w, assets/hero.webp 1920w" sizes="100vw" fetchpriority="high"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
 </div>
 <!-- HUD Elements Decoration -->
@@ -79,14 +78,14 @@ Making Fleets Smarter Through Data Driven Decision Making
 </p>
 <div class="space-y-6">
 <div class="flex items-start gap-4 group">
-<span class="material-symbols-outlined text-primary mt-1" data-icon="hub">hub</span>
+<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" class="text-primary mt-1 shrink-0 fill-current"><path d="M240-40q-50 0-85-35t-35-85q0-50 35-85t85-35q14 0 26 3t23 8l57-71q-28-31-39-70t-5-78l-81-27q-17 25-43 40t-58 15q-50 0-85-35T0-580q0-50 35-85t85-35q50 0 85 35t35 85v8l81 28q20-36 53.5-61t75.5-32v-87q-39-11-64.5-42.5T360-840q0-50 35-85t85-35q50 0 85 35t35 85q0 42-26 73.5T510-724v87q42 7 75.5 32t53.5 61l81-28v-8q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-32 0-58.5-15T739-515l-81 27q6 39-5 77.5T614-340l57 70q11-5 23-7.5t26-2.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-20 6.5-38.5T624-232l-57-71q-41 23-87.5 23T392-303l-56 71q11 15 17.5 33.5T360-160q0 50-35 85t-85 35ZM120-540q17 0 28.5-11.5T160-580q0-17-11.5-28.5T120-620q-17 0-28.5 11.5T80-580q0 17 11.5 28.5T120-540Zm120 420q17 0 28.5-11.5T280-160q0-17-11.5-28.5T240-200q-17 0-28.5 11.5T200-160q0 17 11.5 28.5T240-120Zm240-680q17 0 28.5-11.5T520-840q0-17-11.5-28.5T480-880q-17 0-28.5 11.5T440-840q0 17 11.5 28.5T480-800Zm0 440q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm240 240q17 0 28.5-11.5T760-160q0-17-11.5-28.5T720-200q-17 0-28.5 11.5T680-160q0 17 11.5 28.5T720-120Zm120-420q17 0 28.5-11.5T880-580q0-17-11.5-28.5T840-620q-17 0-28.5 11.5T800-580q0 17 11.5 28.5T840-540Z"/></svg>
 <div>
 <h4 class="font-headline font-semibold text-lg">Zero Friction</h4>
 <p class="text-sm text-on-surface-variant">Our software sits on top of existing systems and integrates seamlessly with your pre-existing software, eliminating the need for a complex migration. </p>
 </div>
 </div>
 <div class="flex items-start gap-4 group">
-<span class="material-symbols-outlined text-primary mt-1" data-icon="timeline">timeline</span>
+<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" class="text-primary mt-1 shrink-0 fill-current"><path d="M120-240q-33 0-56.5-23.5T40-320q0-33 23.5-56.5T120-400h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-600q0-33 23.5-56.5T400-680q33 0 56.5 23.5T480-600q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-640q0-33 23.5-56.5T840-720q33 0 56.5 23.5T920-640q0 33-23.5 56.5T840-560h-10.5q-4.5 0-9.5-2L678-420q2 5 2 9.5v10.5q0 33-23.5 56.5T600-320q-33 0-56.5-23.5T520-400v-10.5q0-4.5 2-9.5L420-522q-5 2-9.5 2H400q-2 0-20-2L198-340q2 5 2 9.5v10.5q0 33-23.5 56.5T120-240Z"/></svg>
 <div>
 <h4 class="font-headline font-semibold text-lg">Bespoke Solutions</h4>
 <p class="text-sm text-on-surface-variant">We work closely with logistic partners to understand their specific pain points and how our expertise can be applied to address this. </p>
@@ -96,7 +95,7 @@ Making Fleets Smarter Through Data Driven Decision Making
 </div>
 <div class="lg:col-span-7 relative order-1 lg:order-2">
 <div class="relative z-10 aspect-[4/3] overflow-hidden rounded-sm bg-surface-container">
-<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.webp" loading="lazy"/>
+<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.webp" srcset="assets/mission-700.webp 700w, assets/mission.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
 <!-- Overlay HUD Layer -->
 <div class="absolute inset-0 pointer-events-none p-8 flex flex-col justify-between">
 <div class="flex justify-between items-start">
@@ -136,7 +135,7 @@ Making Fleets Smarter Through Data Driven Decision Making
 <h3 class="text-4xl font-headline font-bold">NHS Hospitals UK</h3>
 </div>
 <div class="relative aspect-video overflow-hidden border border-outline-variant/20 group">
-<img class="w-full h-full object-cover grayscale-[0.5] opacity-85 group-hover:opacity-95 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.webp" loading="lazy"/>
+<img class="w-full h-full object-cover grayscale-[0.5] opacity-85 group-hover:opacity-95 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.webp" srcset="assets/case_study_1-700.webp 700w, assets/case_study_1.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
 <div class="absolute inset-0 pointer-events-none hud-grid opacity-20"></div>
 </div>
 <div class="prose prose-invert max-w-none">
@@ -189,7 +188,7 @@ Anteam developed an AI-powered quoting calculator for the freight-forwarding com
 </div>
 <div class="lg:col-span-6 lg:order-1 relative">
 <div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative border border-primary/20">
-<img class="w-full h-full object-cover opacity-65" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_2.webp" loading="lazy"/>
+<img class="w-full h-full object-cover opacity-65" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_2.webp" srcset="assets/case_study_2-600.webp 600w, assets/case_study_2.webp 1200w" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy"/>
 </div>
 </div>
 </div>
@@ -215,7 +214,7 @@ By detecting these gaps, the system automatically matches them with suitable ord
 
 <div class="lg:col-span-6 lg:order-2 relative">
 <div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative">
-<img class="w-full h-full object-cover opacity-75" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.webp" loading="lazy"/>
+<img class="w-full h-full object-cover opacity-75" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.webp" srcset="assets/case_study_3-600.webp 600w, assets/case_study_3.webp 1200w" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy"/>
 </div>
 </div>
 </div>
