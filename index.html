@@ -5,17 +5,16 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Anteam</title>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="tailwind.config.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
 <!-- TopNavBar (Shared Component) -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#131313]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-b border-white/5">
 <a href="#" class="flex items-center gap-3">
-<img src="assets/anteam_logo.png" alt="Anteam" class="h-8 w-auto"/>
+<img src="assets/anteam_logo.webp" alt="Anteam" class="h-8 w-auto"/>
 <span class="text-2xl font-bold tracking-tighter text-[#F3AC13]">Anteam</span>
 </a>
 <div class="hidden md:flex gap-10">
@@ -30,7 +29,7 @@
 <section class="relative min-h-[120vh] pt-20 overflow-hidden">
 <!-- Background Image with Overlay -->
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover grayscale-[0.4] contrast-[1.1]" alt="Cinematic wide shot of a shipping container terminal at blue hour with cool atmospheric lighting and glowing orange industrial safety lights" src="assets/hero.jpg"/>
+<img class="w-full h-full object-cover grayscale-[0.4] contrast-[1.1]" alt="Cinematic wide shot of a shipping container terminal at blue hour with cool atmospheric lighting and glowing orange industrial safety lights" src="assets/hero.webp" fetchpriority="high"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
 </div>
 <!-- HUD Elements Decoration -->
@@ -58,8 +57,8 @@
 <div class="pt-8 border-t border-white/10">
 <p class="text-xs font-mono text-on-surface-variant/40 uppercase tracking-widest mb-4">Backed by</p>
 <div class="flex items-center gap-8">
-<img src="assets/innov_uk_logo.jpg" alt="Innovate UK" class="h-12 object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"/>
-<img src="assets/dft-logo.webp" alt="Department for Transport" class="h-12 object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"/>
+<img src="assets/innov_uk_logo.webp" alt="Innovate UK" class="h-12 object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy"/>
+<img src="assets/dft-logo.webp" alt="Department for Transport" class="h-12 object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy"/>
 </div>
 </div>
 </div>
@@ -96,7 +95,7 @@ Making Fleets Smarter Through Data Driven Decision Making
 </div>
 <div class="lg:col-span-7 relative order-1 lg:order-2">
 <div class="relative z-10 aspect-[4/3] overflow-hidden rounded-sm bg-surface-container">
-<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.jpg"/>
+<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.webp" loading="lazy"/>
 <!-- Overlay HUD Layer -->
 <div class="absolute inset-0 pointer-events-none p-8 flex flex-col justify-between">
 <div class="flex justify-between items-start">
@@ -136,7 +135,7 @@ Making Fleets Smarter Through Data Driven Decision Making
 <h3 class="text-4xl font-headline font-bold">NHS Hospitals UK</h3>
 </div>
 <div class="relative aspect-video overflow-hidden border border-outline-variant/20 group">
-<img class="w-full h-full object-cover grayscale-[0.5] opacity-85 group-hover:opacity-95 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.jpg"/>
+<img class="w-full h-full object-cover grayscale-[0.5] opacity-85 group-hover:opacity-95 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.webp" loading="lazy"/>
 <div class="absolute inset-0 pointer-events-none hud-grid opacity-20"></div>
 </div>
 <div class="prose prose-invert max-w-none">
@@ -189,7 +188,7 @@ Anteam developed an AI-powered quoting calculator for the freight-forwarding com
 </div>
 <div class="lg:col-span-6 lg:order-1 relative">
 <div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative border border-primary/20">
-<img class="w-full h-full object-cover opacity-65" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_2.jpg"/>
+<img class="w-full h-full object-cover opacity-65" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_2.webp" loading="lazy"/>
 </div>
 </div>
 </div>
@@ -215,7 +214,7 @@ By detecting these gaps, the system automatically matches them with suitable ord
 
 <div class="lg:col-span-6 lg:order-2 relative">
 <div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative">
-<img class="w-full h-full object-cover opacity-75" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.jpg"/>
+<img class="w-full h-full object-cover opacity-75" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.webp" loading="lazy"/>
 </div>
 </div>
 </div>
@@ -263,7 +262,7 @@ By detecting these gaps, the system automatically matches them with suitable ord
 <footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#131313] border-t border-[#B5C8DF]/10">
 <div class="flex flex-col items-center md:items-start gap-2">
 <a href="#" class="flex items-center gap-3">
-<img src="assets/anteam_logo.png" alt="Anteam" class="h-7 w-auto"/>
+<img src="assets/anteam_logo.webp" alt="Anteam" class="h-7 w-auto"/>
 <span class="font-['Space_Grotesk'] text-lg font-black text-[#F3AC13]">ANTEAM</span>
 </a>
 <div class="font-['Inter'] text-xs tracking-wide text-[#C4C7C7]">© 2026 ANTEAM LTD</div>
