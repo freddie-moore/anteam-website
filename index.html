@@ -8,6 +8,9 @@
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
@@ -15,13 +18,13 @@
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#131313]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-b border-white/5">
 <a href="#" class="flex items-center gap-3">
 <img src="assets/anteam_logo.webp" alt="Anteam" class="h-8 w-auto"/>
-<span class="text-2xl font-bold tracking-tighter text-[#F3AC13]">Anteam</span>
+<span class="text-2xl font-bold tracking-tighter text-primary">Anteam</span>
 </a>
 <div class="hidden md:flex gap-10">
-<a class="font-['Space_Grotesk'] tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-[#F3AC13] transition-colors" href="#philosophy">Philosophy</a>
-<a class="font-['Space_Grotesk'] tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-[#F3AC13] transition-colors" href="#case-studies">Case Studies</a>
+<a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="#philosophy">Philosophy</a>
+<a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="#products">Products</a>
 </div>
-<a href="#contact" class="font-['Space_Grotesk'] tracking-widest uppercase text-sm px-6 py-2 bg-[#F3AC13]/10 border border-[#F3AC13]/30 text-[#F3AC13] hover:bg-[#F3AC13] hover:text-on-primary transition-all duration-300 active:scale-95">
+<a href="#contact" class="font-headline tracking-widest uppercase text-sm px-6 py-2 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95">
         Contact Us
     </a>
 </nav>
@@ -40,14 +43,14 @@
 <!-- Hero Content -->
 <div class="container mx-auto px-8 relative z-10 flex items-center min-h-[calc(100vh-5rem)]">
 <div class="max-w-5xl space-y-8">
-<h1 class="font-headline text-6xl md:text-7xl font-bold tracking-tighter leading-none">
+<h1 class="hero-animate font-headline text-6xl md:text-7xl font-bold tracking-tighter leading-none">
                 The AI Orchestration<br/>
-<span class="text-on-surface-variant">Layer For Logistics.</span>
+<span class="text-primary">Layer For Logistics.</span>
 </h1>
-<p class="text-xl text-on-surface-variant max-w-[38rem] font-light leading-relaxed"> We deliver an instant AI Boost to supercharge your logistics to make it more sustainable and efficient. Our proprietary industrial AI sits on top of your existing systems and makes intelligent decisions to enable route sharing, reduce delivery road miles, costs, and provide validated carbon savings. </p>
-<p class="text-xl text-on-surface-variant max-w-[38rem] font-light leading-relaxed">From same-day last-mile delivery to general freight, we've already proven that smarter systems save more than just time, they save your bottom line and carbon footprint.</p>
-    <div class="flex flex-wrap gap-6 pt-4">
-    <a href="#case-studies" class="bg-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all shadow-[0_0_40px_rgba(243,172,19,0.3)]">
+<p class="hero-animate text-xl text-on-surface-variant max-w-[38rem] font-light leading-relaxed"> We deliver an instant AI Boost to supercharge your logistics to make it more sustainable and efficient. Our proprietary industrial AI sits on top of your existing systems and makes intelligent decisions to enable route sharing, reduce delivery road miles, costs, and provide validated carbon savings. </p>
+<p class="hero-animate text-xl text-on-surface-variant max-w-[38rem] font-light leading-relaxed">From same-day last-mile delivery to general freight, we've already proven that smarter systems save more than just time, they save your bottom line and carbon footprint.</p>
+    <div class="hero-animate flex flex-wrap gap-6 pt-4">
+    <a href="#products" class="bg-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all shadow-[0_0_40px_rgba(243,172,19,0.3)]">
                         See Our Products
                     </a>
     <a href="#contact" class="bg-transparent border border-outline-variant hover:bg-surface-container-highest text-on-surface px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm transition-all">
@@ -55,7 +58,7 @@
                     </a>
     </div>
 
-<div class="pt-8 border-t border-white/10">
+<div class="hero-animate pt-8 border-t border-white/10">
 <p class="text-xs font-mono text-on-surface-variant/40 uppercase tracking-widest mb-4">We are proud to be supported by:</p>
 <div class="flex flex-wrap items-center gap-x-10 gap-y-6">
 <a href="https://www.nhs.uk" target="_blank" rel="noopener noreferrer" class="opacity-60 hover:opacity-90 transition-opacity duration-300"><img src="assets/nhs-logo.png" alt="NHS" class="h-7 max-w-[110px] object-contain grayscale invert mix-blend-screen" loading="lazy"/></a>
@@ -126,11 +129,11 @@ Making Fleets Smarter Through Data-Driven Decision Making
 </div>
 </section>
 <!-- Expanded Case Studies Section -->
-<section id="case-studies" class="py-24 bg-surface space-y-32">
+<section id="products" class="py-24 bg-surface space-y-32">
 <div class="container mx-auto px-8">
 <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
 <div class="space-y-4">
-<span class="text-primary font-label text-xs uppercase tracking-widest">Case Studies</span>
+<span class="text-primary font-label text-xs uppercase tracking-widest">Products</span>
 <h2 class="text-5xl font-headline font-bold tracking-tight">Our Impact</h2>
 </div>
 </div>
@@ -138,6 +141,7 @@ Making Fleets Smarter Through Data-Driven Decision Making
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 <div class="lg:col-span-7 space-y-8">
 <div class="space-y-4">
+<span aria-hidden="true" class="case-study-number">01</span>
 <span class="text-primary font-mono text-xs uppercase tracking-widest opacity-60">Last Mile Delivery: Real-time AI Optimisation</span>
 <h3 class="text-4xl font-headline font-bold">Anteam Route+™</h3>
 </div>
@@ -147,9 +151,11 @@ Making Fleets Smarter Through Data-Driven Decision Making
 </div>
 <div class="prose prose-invert max-w-none">
 <p class="text-lg text-on-surface-variant font-light leading-relaxed">
-                        Anteam Route+ dynamically matches same-day delivery orders with existing or planned routes on the road in real-time, to ensure faster and greener deliveries. Anteam worked closely with NHS Hospitals and a major UK pharmacy chain to validate our patent pending technology. Over 100,000 weekly deliveries by over 1000 vehicles, Anteam Route+ is able to deliver up to 65% cost savings and 85% CO2 savings per AI-matched delivery.</div>
+                        Anteam Route+ dynamically matches same-day delivery orders with existing or planned routes on the road in real-time, to ensure faster and greener deliveries. Anteam worked closely with NHS Hospitals and a major UK pharmacy chain to validate our patent pending technology. Over 100,000 weekly deliveries by over 1000 vehicles, Anteam Route+ is able to deliver up to 65% cost savings and 85% CO2 savings per AI-matched delivery.</p>
 </div>
-<div id="metrics-panel" class="lg:col-span-5 bg-surface-container-low border border-outline-variant/10 p-8">
+<div class="flex"><a href="#contact" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
+</div>
+<div id="metrics-panel" class="lg:col-span-5 lg:sticky lg:top-24 bg-surface-container-low border border-outline-variant/10 p-8">
 <div class="flex items-center gap-2 mb-8">
 <div class="w-2 h-2 bg-primary rounded-full"></div>
 <span class="font-label text-xs uppercase tracking-widest text-primary">Metrics</span>
@@ -178,12 +184,12 @@ Making Fleets Smarter Through Data-Driven Decision Making
 </div>
 </div>
 </div>
-<div class="flex"><a href="#contact" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
 </div>
 
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
 <div class="lg:col-span-6 lg:order-2 space-y-8">
 <div class="space-y-4">
+<span aria-hidden="true" class="case-study-number">02</span>
 <span class="text-primary font-mono text-xs uppercase tracking-widest opacity-60">AI Quoting and Supplier Intelligence</span>
 <h3 class="text-4xl font-headline font-bold">Anteam Quote™</h3>
 </div>
@@ -205,6 +211,7 @@ Quote smarter. Win faster. Anteam developed an AI-powered quoting calculator for
 
 <div class="lg:col-span-6 lg:order-1 space-y-8">
 <div class="space-y-4">
+<span aria-hidden="true" class="case-study-number">03</span>
 <span class="text-primary font-mono text-xs uppercase tracking-widest opacity-60">Freight Operators: Eliminate Empty Miles</span>
 <h3 class="text-4xl font-headline font-bold">Anteam Reload™</h3>
 </div>
@@ -224,7 +231,6 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
 </div>
 
 </div>
-</div>
 </section>
 
 <!-- Contact Section -->
@@ -233,7 +239,8 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
 <div class="text-center mb-16 space-y-4">
 <span class="text-primary font-label text-xs uppercase tracking-widest">Get in Touch</span>
 <h2 class="text-5xl font-headline font-bold tracking-tight">Let's Talk</h2>
-<p class="text-lg text-on-surface-variant font-light max-w-xl mx-auto leading-relaxed">Reach out to schedule a quick 15-minute chat to discuss your pain points. We’ll talk about how Anteam AI can help.
+<p class="text-lg text-on-surface-variant font-light max-w-xl mx-auto leading-relaxed">Reach out to schedule a quick 15-minute chat to discuss your pain points. We’ll talk about how Anteam AI can help.</p>
+</div>
 <form action="contact.php" method="POST" class="space-y-8 bg-surface-container-lowest p-10 border border-outline-variant/20">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="space-y-2">
@@ -266,12 +273,15 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
 <div class="flex flex-col items-center md:items-start gap-2">
 <a href="#" class="flex items-center gap-3">
 <img src="assets/anteam_logo.webp" alt="Anteam" class="h-7 w-auto"/>
-<span class="font-['Space_Grotesk'] text-lg font-black text-[#F3AC13]">ANTEAM</span>
+<span class="font-headline text-lg font-black text-primary">ANTEAM</span>
 </a>
-<div class="font-['Inter'] text-xs tracking-wide text-[#C4C7C7]">© 2026 ANTEAM LTD</div>
+<div class="font-body text-xs tracking-wide text-[#C4C7C7]">© 2026 ANTEAM LTD</div>
 </div>
-<div class="flex gap-8">
-<a class="font-['Inter'] text-xs tracking-wide text-[#C4C7C7] hover:text-[#F3AC13] underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="privacy-policy.html">Privacy Policy</a>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary transition-colors" href="#philosophy">Philosophy</a>
+<a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary transition-colors" href="#products">Products</a>
+<a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary transition-colors" href="#contact">Contact</a>
+<a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="privacy-policy.html">Privacy Policy</a>
 </div>
 </footer>
 <script src="main.js"></script>

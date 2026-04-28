@@ -31,3 +31,10 @@ const observer = new IntersectionObserver((entries) => {
 
 const panel = document.getElementById('metrics-panel');
 if (panel) observer.observe(panel);
+
+const nav = document.querySelector('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+  }, { passive: true });
+}

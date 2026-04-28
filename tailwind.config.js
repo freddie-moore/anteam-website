@@ -53,9 +53,9 @@ module.exports = {
         "background": "#131313"
       },
       fontFamily: {
-        "headline": ["Space Grotesk"],
-        "body": ["Inter"],
-        "label": ["Space Grotesk"]
+        "headline": ["Barlow Condensed", "Space Grotesk", "sans-serif"],
+        "body": ["IBM Plex Sans", "Inter", "sans-serif"],
+        "label": ["Barlow Condensed", "Space Grotesk", "sans-serif"]
       },
       borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
     },
