@@ -24,13 +24,12 @@ const observer = new IntersectionObserver((entries) => {
       counters.forEach((el, i) => {
         setTimeout(() => animateCounter(el), i * 200);
       });
-      observer.disconnect();
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.7 });
 
-const panel = document.getElementById('metrics-panel');
-if (panel) observer.observe(panel);
+document.querySelectorAll('[id^="metrics-panel"]').forEach(panel => observer.observe(panel));
 
 const nav = document.querySelector('nav');
 if (nav) {

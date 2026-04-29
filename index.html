@@ -10,7 +10,8 @@
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/></noscript>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
@@ -29,7 +30,7 @@
     </a>
 </nav>
 <!-- Hero Section -->
-<section class="relative min-h-[120vh] pt-20 overflow-hidden">
+<section class="relative min-h-screen pt-20 overflow-hidden flex flex-col">
 <!-- Background Image with Overlay -->
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover grayscale-[0.4] contrast-[1.1]" alt="Cinematic wide shot of a shipping container terminal at blue hour with cool atmospheric lighting and glowing orange industrial safety lights" src="assets/hero.webp" srcset="assets/hero-960.webp 960w, assets/hero.webp 1920w" sizes="100vw" fetchpriority="high"/>
@@ -41,7 +42,7 @@
 <div class="w-[300px] h-[300px] border border-tertiary/20 rounded-full animate-pulse"></div>
 </div>
 <!-- Hero Content -->
-<div class="container mx-auto px-8 relative z-10 flex items-center min-h-[calc(100vh-5rem)]">
+<div class="container mx-auto px-8 relative z-10 flex items-center flex-1">
 <div class="max-w-5xl space-y-8">
 <h1 class="hero-animate font-headline text-6xl md:text-7xl font-bold tracking-tighter leading-none">
                 The AI Boost For<br/>
@@ -58,9 +59,11 @@
                     </a>
     </div>
 
-<div class="hero-animate pt-8 border-t border-white/10">
-<p class="text-xs font-mono text-on-surface-variant/40 uppercase tracking-widest mb-8">We are proud to be supported by:</p>
-<div class="logo-carousel-outer max-w-[38rem]">
+</div>
+</div>
+<div class="hero-animate relative z-10 border-t border-white/10 pb-12" style="animation-delay:0.8s">
+<p class="px-8 text-xs font-mono text-on-surface-variant/40 uppercase tracking-widest pt-8 mb-8">We are proud to be supported by:</p>
+<div class="logo-carousel-outer">
   <div class="logo-carousel-track" id="logoTrack">
     <a href="https://www.gov.uk/government/organisations/department-for-transport" target="_blank" rel="noopener noreferrer" class="logo-item transition-opacity duration-300"><img src="assets/dft-logo.webp" alt="Department for Transport" class="h-8 max-w-[110px] object-contain brightness-0 invert" loading="lazy"/></a>
     <a href="https://www.nhs.uk" target="_blank" rel="noopener noreferrer" class="logo-item transition-opacity duration-300"><img src="assets/nhs.png" alt="NHS" class="h-8 max-w-[110px] object-contain brightness-0 invert" loading="lazy"/></a>
@@ -88,8 +91,6 @@
     <a href="https://welchgroup.co.uk/logistics-haulage-freight-transport/" target="_blank" rel="noopener noreferrer" class="logo-item transition-opacity duration-300" aria-hidden="true"><img src="assets/welch-logo.png" alt="" class="h-8 max-w-[110px] object-contain brightness-0 invert" loading="lazy"/></a>
     <a href="https://baxterfreight.com" target="_blank" rel="noopener noreferrer" class="logo-item transition-opacity duration-300" aria-hidden="true"><img src="assets/baxter.png" alt="" class="h-8 max-w-[110px] object-contain brightness-0 invert" loading="lazy"/></a>
   </div>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -161,11 +162,11 @@ Making Fleets Smarter Through Data-Driven Decision Making
 <div class="lg:col-span-7 space-y-8">
 <div class="space-y-4">
 <span aria-hidden="true" class="case-study-number">01</span>
-<span class="text-primary font-mono text-sm uppercase tracking-widest opacity-60">Last Mile Delivery: Real-time AI Optimisation</span>
+<span class="text-primary font-mono text-base uppercase tracking-widest opacity-60">Last Mile Delivery: Real-time AI Optimisation</span>
 <h3 class="text-4xl font-headline font-bold">Anteam Route+™</h3>
 </div>
 <div class="relative aspect-video overflow-hidden border border-outline-variant/20 group">
-<img class="w-full h-full object-cover grayscale-[0.5] opacity-85 group-hover:opacity-95 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.webp" srcset="assets/case_study_1-700.webp 700w, assets/case_study_1.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
+<img class="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:opacity-100 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.jpg" srcset="assets/case_study_1-700.webp 700w, assets/case_study_1.jpg 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
 <div class="absolute inset-0 pointer-events-none hud-grid opacity-20"></div>
 </div>
 <div class="prose prose-invert max-w-none">
@@ -209,7 +210,7 @@ Making Fleets Smarter Through Data-Driven Decision Making
 <div class="lg:col-span-6 lg:order-2 space-y-8">
 <div class="space-y-4">
 <span aria-hidden="true" class="case-study-number">02</span>
-<span class="text-primary font-mono text-sm uppercase tracking-widest opacity-60">AI Quoting and Supplier Intelligence</span>
+<span class="text-primary font-mono text-base uppercase tracking-widest opacity-60">AI Quoting and Supplier Intelligence</span>
 <h3 class="text-4xl font-headline font-bold">Anteam Quote™</h3>
 </div>
 <div class="prose prose-invert max-w-none space-y-6">
@@ -225,26 +226,44 @@ Quote smarter. Win faster. Anteam developed an AI-powered quoting calculator for
 </div>
 </div>
 
-<!-- Case Study 03: Urban Pulse -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
-
-<div class="lg:col-span-6 lg:order-1 space-y-8">
+<!-- Case Study 03: Reload -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7 space-y-8">
 <div class="space-y-4">
 <span aria-hidden="true" class="case-study-number">03</span>
-<span class="text-primary font-mono text-sm uppercase tracking-widest opacity-60">Freight Operators: Eliminate Empty Miles</span>
+<span class="text-primary font-mono text-base uppercase tracking-widest opacity-60">Freight Operators: Eliminate Empty Miles</span>
 <h3 class="text-4xl font-headline font-bold">Anteam Reload™</h3>
 </div>
-<div class="prose prose-invert max-w-none space-y-6">
+<div class="relative aspect-video overflow-hidden border border-outline-variant/20 group">
+<img class="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:opacity-100 transition-opacity duration-700" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.webp" srcset="assets/case_study_3-600.webp 600w, assets/case_study_3.webp 1200w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
+<div class="absolute inset-0 pointer-events-none hud-grid opacity-20"></div>
+</div>
+<div class="prose prose-invert max-w-none">
 <p class="text-lg text-on-surface-variant font-light leading-relaxed">
-Anteam Reload™ analyses planned routes and delivery schedules to identify inefficient empty legs. By detecting these gaps, the system automatically matches them with suitable orders from own or other suppliers, effectively filling unused capacity and maximising vehicle utilisation. This not only reduces wasted mileage and fuel consumption but also unlocks new revenue opportunities from journeys that would previously generate no return.
- </p>
+Anteam Reload™ analyses planned routes and delivery schedules to identify inefficient empty legs. By detecting these gaps, the system automatically matches them with suitable orders from own or other suppliers, effectively filling unused capacity and maximising vehicle utilisation. This not only reduces wasted mileage and fuel consumption but also unlocks new revenue opportunities from journeys that would previously generate no return.</p>
 </div>
-<a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs">Book a Demo →</a>
+<div class="flex"><a href="#contact" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
 </div>
-
-<div class="lg:col-span-6 lg:order-2 relative">
-<div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative">
-<img class="w-full h-full object-cover opacity-75" alt="High angle night shot of city streets with glowing orange delivery vehicle trails and a holographic map overlay" src="assets/case_study_3.webp" srcset="assets/case_study_3-600.webp 600w, assets/case_study_3.webp 1200w" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy"/>
+<div id="metrics-panel-3" class="lg:col-span-5 lg:sticky lg:top-24 bg-surface-container-low border border-outline-variant/10 p-8">
+<div class="flex items-center gap-2 mb-8">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<span class="font-label text-xs uppercase tracking-widest text-primary">Metrics</span>
+</div>
+<div class="flex flex-col divide-y divide-outline-variant/10">
+<div class="py-6 first:pt-0 flex items-center gap-6">
+<div class="flex items-center gap-3 text-6xl font-headline font-bold text-primary shrink-0"><span class="text-2xl">↑</span><span class="counter" data-target="16" data-suffix="%">0%</span></div>
+<div>
+<div class="text-xs font-mono text-on-surface-variant/60 uppercase tracking-widest">Increase in Profit</div>
+<div class="text-sm text-on-surface-variant font-light mt-1">Filling empty legs turns previously unprofitable journeys into revenue.</div>
+</div>
+</div>
+<div class="py-6 last:pb-0 flex items-center gap-6">
+<div class="flex items-center gap-3 text-6xl font-headline font-bold text-tertiary shrink-0"><span class="text-2xl">↓</span><span class="counter" data-target="34" data-suffix="%">0%</span></div>
+<div>
+<div class="text-xs font-mono text-on-surface-variant/60 uppercase tracking-widest">CO₂ Savings</div>
+<div class="text-sm text-on-surface-variant font-light mt-1">Fewer empty miles per matched delivery means a significantly lower carbon footprint.</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -313,7 +332,6 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
   var isDragging = false, startX, dragPos;
 
   function step() {
-    if (!halfWidth) halfWidth = track.offsetWidth / 2;
     if (!isDragging) {
       pos -= 0.5;
       if (halfWidth > 0 && pos < -halfWidth) pos += halfWidth;
@@ -347,7 +365,10 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
     }
   });
 
-  requestAnimationFrame(step);
+  window.addEventListener('load', function() {
+    halfWidth = track.offsetWidth / 2;
+    requestAnimationFrame(step);
+  });
 })();
 </script>
 </body></html>
