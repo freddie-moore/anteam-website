@@ -105,7 +105,8 @@ $result = curl_exec($ch);
 $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($status == 202) {
-    echo "✅ Message sent!";
+    header("Location: /#contact?submitted=success");
 } else {
-    echo "❌ Failed ($status): $result";
+    header("Location: /#contact?submitted=error");
 }
+exit();
