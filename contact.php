@@ -105,8 +105,8 @@ $result = curl_exec($ch);
 $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($status == 202) {
-    header("Location: /#contact?submitted=success");
+    header("Location: /?submitted=success#contact");
 } else {
-    header("Location: /#contact?submitted=error");
+    header("Location: /?submitted=error#contact");
 }
 exit();
