@@ -12,6 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@main
 
+      - name: Inject cache-busting version
+        run: |
+          SHORT_SHA="${GITHUB_SHA:0:8}"
+          sed -i "s/href=\"style\.css\"/href=\"style.css?v=$SHORT_SHA\"/g" index.html
+          sed -i "s/src=\"main\.js\"/src=\"main.js?v=$SHORT_SHA\"/g" index.html
+
       - name: Deploy via rsync over SSH
         uses: easingthemes/ssh-deploy@main
         with:
