@@ -11,6 +11,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/></noscript>
 <link href="style.css" rel="stylesheet"/>
+<script defer src="https://analytics.umami.is/script.js" data-website-id="ca05893a-4ca9-4f5c-b33b-665103596cd4"></script>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
 <!-- TopNavBar (Shared Component) -->
@@ -23,7 +24,7 @@
 <a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="#philosophy">Mission</a>
 <a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="#products">Products</a>
 </div>
-<a href="#contact" class="hidden md:inline-flex font-headline tracking-widest uppercase text-sm px-6 py-2 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95">
+<a href="#contact" data-umami-event="cta_click" data-umami-event-location="nav" class="hidden md:inline-flex font-headline tracking-widest uppercase text-sm px-6 py-2 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95">
         Contact Us
     </a>
 <button id="nav-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-[#C4C7C7] hover:text-primary transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -40,7 +41,7 @@
     <a class="mobile-nav-link font-headline tracking-widest uppercase text-3xl text-[#C4C7C7] hover:text-primary transition-colors" href="#philosophy" tabindex="-1">Mission</a>
     <a class="mobile-nav-link font-headline tracking-widest uppercase text-3xl text-[#C4C7C7] hover:text-primary transition-colors" href="#products" tabindex="-1">Products</a>
   </nav>
-  <a href="#contact" class="mobile-nav-link mt-6 font-headline tracking-widest uppercase text-sm px-12 py-4 bg-primary text-on-primary hover:brightness-110 transition-all font-bold" tabindex="-1">
+  <a href="#contact" data-umami-event="cta_click" data-umami-event-location="mobile_nav" class="mobile-nav-link mt-6 font-headline tracking-widest uppercase text-sm px-12 py-4 bg-primary text-on-primary hover:brightness-110 transition-all font-bold" tabindex="-1">
     Get in Touch
   </a>
 </div>
@@ -62,10 +63,10 @@
 </h1>
 <p class="hero-animate text-xl text-on-surface-variant max-w-[38rem] font-light leading-relaxed">From same-day last-mile delivery to general freight, we've already proven that smarter systems save more than just time, they save your bottom line and carbon footprint.</p>
     <div class="hero-animate flex flex-wrap gap-6 pt-4">
-    <a href="#products" class="bg-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all shadow-[0_0_40px_rgba(255,186,55,0.3)]">
+    <a href="#products" data-umami-event="cta_click" data-umami-event-location="hero_products" class="bg-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all shadow-[0_0_40px_rgba(255,186,55,0.3)]">
                         See Our Products
                     </a>
-    <a href="#contact" class="bg-transparent border border-outline-variant hover:bg-surface-container-highest text-on-surface px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm transition-all">
+    <a href="#contact" data-umami-event="cta_click" data-umami-event-location="hero_contact" class="bg-transparent border border-outline-variant hover:bg-surface-container-highest text-on-surface px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm transition-all">
                         Get in Touch
                     </a>
     </div>
@@ -137,7 +138,7 @@ We deliver an instant AI Boost to supercharge your logistics to make it more sus
 </div>
 <div class="lg:col-span-7 relative order-1 lg:order-2">
 <div class="relative z-10 aspect-[4/3] overflow-hidden rounded-sm bg-surface-container">
-<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.webp" srcset="assets/mission-700.webp 700w, assets/mission-1200.webp 1200w, assets/mission.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
+<img class="w-full h-full object-cover opacity-80 transition-transform duration-700 hover:scale-105" alt="Dramatic high angle shot of a semi-truck on a dark highway at night with long exposure light trails and digital grid overlay" src="assets/mission.webp" srcset="assets/mission-700.webp 700w, assets/mission-800.webp 800w, assets/mission-1200.webp 1200w, assets/mission.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
 <!-- Overlay HUD Layer -->
 <div class="absolute inset-0 pointer-events-none p-8 flex flex-col justify-between">
 <div class="flex justify-between items-start">
@@ -178,14 +179,14 @@ We deliver an instant AI Boost to supercharge your logistics to make it more sus
 <h3 class="text-4xl font-headline font-bold">Anteam Route+™</h3>
 </div>
 <div class="relative aspect-video overflow-hidden border border-outline-variant/20 group">
-<img class="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:opacity-100 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.webp" srcset="assets/case_study_1-700.webp 700w, assets/case_study_1-1200.webp 1200w, assets/case_study_1.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
+<img class="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:opacity-100 transition-opacity duration-700" alt="Gritty industrial yard at night with high contrast orange lights and heavy machinery" src="assets/case_study_1.webp" srcset="assets/case_study_1-700.webp 700w, assets/case_study_1-800.webp 800w, assets/case_study_1-1200.webp 1200w, assets/case_study_1.webp 1400w" sizes="(max-width: 1024px) 100vw, 58vw" loading="lazy"/>
 <div class="absolute inset-0 pointer-events-none hud-grid opacity-20"></div>
 </div>
 <div class="prose prose-invert max-w-none">
 <p class="text-lg text-on-surface-variant font-light leading-relaxed">
                         Anteam Route+ dynamically matches same-day delivery orders with existing or planned routes on the road in real-time, to ensure faster and greener deliveries. Anteam worked closely with NHS Hospitals and a major UK pharmacy chain to validate our patent pending technology. Over 100,000 weekly deliveries by over 1000 vehicles, Anteam Route+ is able to deliver up to 65% cost savings and 85% CO2 savings per AI-matched delivery.</p>
 </div>
-<div class="flex"><a href="#contact" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
+<div class="flex"><a href="#contact" data-umami-event="cta_click" data-umami-event-location="demo_route_plus" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
 </div>
 <div id="metrics-panel" class="lg:col-span-5 lg:sticky lg:top-24 bg-surface-container-low border border-outline-variant/10 p-8">
 <div class="flex items-center gap-2 mb-8">
@@ -229,7 +230,7 @@ We deliver an instant AI Boost to supercharge your logistics to make it more sus
 <p class="text-lg text-on-surface-variant font-light leading-relaxed">
 Quote smarter. Win faster. Anteam developed an AI-powered quoting calculator for freight-forwarding companies. The AI tool learns from historical order data and patterns, as well as your favourite suppliers, to generate accurate, data-driven quotes, and predict suitable suppliers instantly. The solution could improve your quoting process speed by at least 50%, and most importantly, the accuracy of your quotes. This enables freight forwarders to respond to their customer enquiries faster, more consistently and with a reduced risk of human error.</p>
 </div>
-<a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs">Book a Demo →</a>
+<a href="#contact" data-umami-event="cta_click" data-umami-event-location="demo_quote" class="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs">Book a Demo →</a>
 </div>
 <div class="lg:col-span-6 lg:order-1 relative">
 <div class="aspect-square bg-surface-container-high rounded-sm overflow-hidden relative border border-primary/20">
@@ -254,7 +255,7 @@ Quote smarter. Win faster. Anteam developed an AI-powered quoting calculator for
 <p class="text-lg text-on-surface-variant font-light leading-relaxed">
 Anteam Reload™ analyses planned routes and delivery schedules to identify inefficient empty legs. By detecting these gaps, the system automatically matches them with suitable orders from own or other suppliers, effectively filling unused capacity and maximising vehicle utilisation. This not only reduces wasted mileage and fuel consumption but also unlocks new revenue opportunities from journeys that would previously generate no return.</p>
 </div>
-<div class="flex"><a href="#contact" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
+<div class="flex"><a href="#contact" data-umami-event="cta_click" data-umami-event-location="demo_reload" class="flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 font-headline font-bold uppercase tracking-widest text-xs whitespace-nowrap">Book a Demo →</a></div>
 </div>
 <div id="metrics-panel-3" class="lg:col-span-5 lg:sticky lg:top-24 bg-surface-container-low border border-outline-variant/10 p-8">
 <div class="flex items-center gap-2 mb-8">
@@ -311,7 +312,7 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
 </div>
 </div>
 <div class="pt-4 flex justify-center">
-<button type="submit" class="px-16 py-4 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,186,55,0.2)]">
+<button type="submit" data-umami-event="contact_form_submit" class="px-16 py-4 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,186,55,0.2)]">
     Book a Call
 </button>
 </div>

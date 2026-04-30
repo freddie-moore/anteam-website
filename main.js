@@ -31,6 +31,42 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[id^="metrics-panel"]').forEach(panel => observer.observe(panel));
 
+// --- Analytics ---
+
+// Section scroll visibility
+const sectionNames = { philosophy: 'mission', products: 'products', contact: 'contact' };
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      window.umami?.track('section_viewed', { section: sectionNames[id] || id });
+      sectionObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('#philosophy, #products, #contact').forEach(el => sectionObserver.observe(el));
+
+// Time on page
+const _pageStart = Date.now();
+let _timeFired = false;
+function _timeBucket(s) {
+  if (s < 10) return '<10s';
+  if (s < 30) return '10-30s';
+  if (s < 90) return '30-90s';
+  if (s < 300) return '90s-5min';
+  return '5min+';
+}
+function _fireTimeOnPage() {
+  if (_timeFired) return;
+  _timeFired = true;
+  const seconds = Math.round((Date.now() - _pageStart) / 1000);
+  window.umami?.track('time_on_page', { duration: _timeBucket(seconds) });
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') _fireTimeOnPage(); });
+window.addEventListener('pagehide', _fireTimeOnPage);
+
+// --- End Analytics ---
+
 const toastParam = new URLSearchParams(window.location.search).get('submitted');
 if (toastParam) {
   const success = toastParam === 'success';
@@ -38,6 +74,7 @@ if (toastParam) {
   const form = document.querySelector('#contact form');
   if (form) {
     if (success) {
+      window.umami?.track('contact_form_success');
       form.innerHTML = `
         <div style="text-align:center;padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1rem">
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="margin-bottom:.25rem">
