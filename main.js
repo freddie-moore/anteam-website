@@ -38,12 +38,28 @@ if (toastParam) {
   const form = document.querySelector('#contact form');
   if (form) {
     if (success) {
-      form.innerHTML = '<div class="text-center py-16 space-y-4"><p class="text-primary font-headline font-bold uppercase tracking-widest text-sm">Message Received</p><p class="text-on-surface-variant font-body text-base">Thank you for reaching out — we\'ll be in touch shortly.</p></div>';
+      form.innerHTML = `
+        <div style="text-align:center;padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1rem">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="margin-bottom:.25rem">
+            <circle cx="22" cy="22" r="21" stroke="#ffba37" stroke-width="1.5" opacity="0.4"/>
+            <polyline points="13,22 20,29 31,15" stroke="#ffba37" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e5e2e1">Message Received</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:.875rem;color:#c4c7c7;font-weight:300;max-width:300px;line-height:1.75">Thank you for reaching out — we'll be in touch within 24 hours.</p>
+        </div>
+      `;
     } else {
-      const errBanner = document.createElement('div');
-      errBanner.className = 'mb-6 px-6 py-4 border border-red-500/40 text-red-400 font-body text-sm';
-      errBanner.textContent = 'Something went wrong. Please email info@anteam.ai directly.';
-      form.prepend(errBanner);
+      form.innerHTML = `
+        <div style="text-align:center;padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1rem">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="margin-bottom:.25rem">
+            <circle cx="22" cy="22" r="21" stroke="#ffb4ab" stroke-width="1.5" opacity="0.4"/>
+            <line x1="15" y1="15" x2="29" y2="29" stroke="#ffb4ab" stroke-width="2" stroke-linecap="square"/>
+            <line x1="29" y1="15" x2="15" y2="29" stroke="#ffb4ab" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e5e2e1">Something Went Wrong</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:.875rem;color:#c4c7c7;font-weight:300;max-width:300px;line-height:1.75">Please email us directly at <a href="mailto:info@anteam.ai" style="color:#ffb4ab;text-decoration:underline">info@anteam.ai</a></p>
+        </div>
+      `;
     }
   }
 
