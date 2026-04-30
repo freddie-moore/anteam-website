@@ -32,7 +32,7 @@ if (!isset($_GET['code'])) {
 // STEP 2: Exchange code for token
 $data = [
     "client_id" => $clientId,
-    "scope" => "https://graph.microsoft.com/.default",
+    "scope" => "openid profile offline_access Mail.Send",
     "code" => $_GET['code'],
     "redirect_uri" => $redirectUri,
     "grant_type" => "authorization_code",
@@ -42,19 +42,24 @@ if (!empty($clientSecret)) {
     $data["client_secret"] = $clientSecret;
 }
 
-$options = [
-    "http" => [
-        "header" => "Content-type: application/x-www-form-urlencoded",
-        "method" => "POST",
-        "content" => http_build_query($data),
-    ]
-];
+$ch = curl_init($tokenUrl);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/x-www-form-urlencoded"]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+$curlError = curl_error($ch);
+$httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
-$response = file_get_contents($tokenUrl, false, stream_context_create($options));
+if ($response === false) {
+    die("❌ Token request failed (curl): " . $curlError);
+}
+
 $token = json_decode($response, true);
 
 if (!isset($token['access_token'])) {
-    die("❌ Token error: " . print_r($token, true));
+    die("❌ Token error (HTTP $httpStatus): " . htmlspecialchars(print_r($token, true)));
 }
 
 $accessToken = $token['access_token'];
