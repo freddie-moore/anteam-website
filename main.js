@@ -77,6 +77,8 @@ if (nav) {
 const menuBtn = document.getElementById('nav-menu-btn');
 const mobileNav = document.getElementById('mobile-nav');
 
+const hamSvg = document.getElementById('ham-svg');
+
 function openMobileMenu() {
   mobileNav.classList.remove('pointer-events-none', 'opacity-0');
   mobileNav.classList.add('pointer-events-auto', 'opacity-100');
@@ -84,11 +86,7 @@ function openMobileMenu() {
   mobileNav.querySelectorAll('[tabindex="-1"]').forEach(el => el.removeAttribute('tabindex'));
   menuBtn.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
-  const lines = menuBtn.querySelectorAll('span');
-  lines[0].style.transform = 'translateY(8px) rotate(45deg)';
-  lines[1].style.opacity = '0';
-  lines[2].style.transform = 'translateY(-8px) rotate(-45deg)';
-  lines[2].style.width = '1.5rem';
+  hamSvg.classList.add('is-open');
 }
 
 function closeMobileMenu() {
@@ -98,11 +96,7 @@ function closeMobileMenu() {
   mobileNav.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
   menuBtn.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
-  const lines = menuBtn.querySelectorAll('span');
-  lines[0].style.transform = '';
-  lines[1].style.opacity = '';
-  lines[2].style.transform = '';
-  lines[2].style.width = '';
+  hamSvg.classList.remove('is-open');
 }
 
 if (menuBtn && mobileNav) {
