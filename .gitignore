@@ -3,3 +3,4 @@ convert-images.js
 resize-images.js
 tailwind.input.css
 .DS_Store
+.env

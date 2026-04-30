@@ -20,4 +20,4 @@ jobs:
           REMOTE_USER: ubuntu
           SOURCE: "./"
           TARGET: "/var/www/anteam-ai"
-          EXCLUDE: ".git/, .github/, node_modules/"
+          EXCLUDE: ".git/, .github/, node_modules/, .env"
