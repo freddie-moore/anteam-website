@@ -33,21 +33,21 @@ document.querySelectorAll('[id^="metrics-panel"]').forEach(panel => observer.obs
 
 const toastParam = new URLSearchParams(window.location.search).get('submitted');
 if (toastParam) {
-  const toast = document.getElementById('toast');
-  const inner = document.getElementById('toast-inner');
-  const msg = document.getElementById('toast-msg');
   const success = toastParam === 'success';
-  msg.textContent = success ? 'Message sent — we\'ll be in touch.' : 'Something went wrong. Please email info@anteam.ai directly with your query.';
-  inner.classList.add(success ? 'border-primary/40' : 'border-red-500/40');
-  inner.classList.add(success ? 'text-primary' : 'text-red-400');
-  toast.classList.remove('hidden');
-  toast.style.cssText = 'opacity:0;transform:translateY(12px);transition:opacity 0.4s ease,transform 0.4s ease';
-  requestAnimationFrame(() => { toast.style.opacity = '1'; toast.style.transform = 'translateY(0)'; });
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'translateY(12px)';
-    setTimeout(() => toast.classList.add('hidden'), 400);
-  }, 5000);
+
+  const form = document.querySelector('#contact form');
+  if (form) {
+    if (success) {
+      form.innerHTML = '<div class="text-center py-16 space-y-4"><p class="text-primary font-headline font-bold uppercase tracking-widest text-sm">Message Received</p><p class="text-on-surface-variant font-body text-base">Thank you for reaching out — we\'ll be in touch shortly.</p></div>';
+    } else {
+      const errBanner = document.createElement('div');
+      errBanner.className = 'mb-6 px-6 py-4 border border-red-500/40 text-red-400 font-body text-sm';
+      errBanner.textContent = 'Something went wrong. Please email info@anteam.ai directly.';
+      form.prepend(errBanner);
+    }
+  }
+
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   window.history.replaceState({}, '', window.location.pathname);
 }
 
