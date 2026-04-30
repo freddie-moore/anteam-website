@@ -19,5 +19,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.SERVER_IP }}
           REMOTE_USER: ubuntu
           SOURCE: "./"
-          TARGET: "/var/www/website"
+          TARGET: "/var/www/anteam-ai"
           EXCLUDE: ".git/, .github/, node_modules/"
