@@ -112,6 +112,6 @@ $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 if ($status == 202) {
     header("Location: /?submitted=success#contact");
 } else {
-    header("Location: /?submitted=error#contact");
+    die("❌ Send error (HTTP $status): " . htmlspecialchars($result));
 }
 exit();
