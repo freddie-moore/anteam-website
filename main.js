@@ -27,7 +27,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.7 });
+}, { threshold: 0.3 });
 
 document.querySelectorAll('[id^="metrics-panel"]').forEach(panel => observer.observe(panel));
 
