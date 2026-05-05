@@ -353,7 +353,7 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
     <span id="toast-msg"></span>
   </div>
 </div>
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 <script>
 (function(){
   var el = document.querySelector('.logo-carousel-outer');
@@ -397,11 +397,8 @@ Anteam Reload™ analyses planned routes and delivery schedules to identify inef
     }
   });
 
-  halfWidth = track.offsetWidth / 2;
   requestAnimationFrame(step);
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(function() { halfWidth = track.offsetWidth / 2; }).observe(track);
-  }
+  new ResizeObserver(function() { halfWidth = track.offsetWidth / 2; }).observe(track);
 })();
 </script>
 </body></html>
