@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News — Anteam</title>
+<meta name="description" content="Latest news and insights from Anteam — AI-powered logistics intelligence."/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="canonical" href="https://www.anteam.ai/news.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/></noscript>
+<link href="style.css" rel="stylesheet"/>
+<style>
+  /* ── News-page specific styles ── */
+  :root {
+    --primary: #ffba37;
+    --surface: #131313;
+    --surface-dim: #0e0e0e;
+    --surface-container-low: #1c1b1b;
+    --on-surface: #e5e2e1;
+    --on-surface-variant: #c4c7c7;
+    --outline-variant: #444748;
+    --tertiary: #b5c8df;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font-family: 'IBM Plex Sans', Inter, sans-serif;
+  }
+
+  /* ── Article hero ── */
+  .article-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .article-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.45) contrast(1.1);
+  }
+
+  .article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      #131313 0%,
+      rgba(19,19,19,0.75) 50%,
+      rgba(19,19,19,0.2) 100%
+    );
+  }
+
+  .article-hero-hud {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(181,200,223,0.04) 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 0.4;
+  }
+
+  /* ── Category badge ── */
+  .category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+    border: 1px solid rgba(255,186,55,0.3);
+    padding: 0.35rem 0.75rem;
+    background: rgba(255,186,55,0.07);
+  }
+
+  .category-badge::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+  }
+
+  /* ── Article headline ── */
+  .article-headline {
+    font-family: 'Barlow Condensed', 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--on-surface);
+  }
+
+  /* ── Article meta bar ── */
+  .meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(255,186,55,0.15);
+    border-bottom: 1px solid rgba(68,71,72,0.3);
+  }
+
+  .meta-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+  }
+
+  .meta-item span {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--on-surface);
+    margin-top: 0.2rem;
+    letter-spacing: 0.05em;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .meta-divider {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(68,71,72,0.5);
+    flex-shrink: 0;
+  }
+
+  /* ── Body text ── */
+  .article-body {
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--on-surface-variant);
+    max-width: 68ch;
+  }
+
+  .article-body p + p {
+    margin-top: 1.75rem;
+  }
+
+  .article-body h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--on-surface);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .article-body h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    color: var(--on-surface);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .article-body strong {
+    color: var(--on-surface);
+    font-weight: 500;
+  }
+
+  /* ── Pull quote ── */
+  .pull-quote {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 2rem 2rem 2.5rem;
+    border-left: 3px solid var(--primary);
+    background: rgba(255,186,55,0.04);
+  }
+
+  .pull-quote::before {
+    content: '"';
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 8rem;
+    font-weight: 800;
+    color: rgba(255,186,55,0.12);
+    position: absolute;
+    top: -1.5rem;
+    left: 1rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .pull-quote p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--on-surface);
+    letter-spacing: -0.01em;
+    margin: 0 !important;
+  }
+
+  .pull-quote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-style: normal;
+  }
+
+  /* ── Inline stat callout ── */
+  .stat-callout {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,186,55,0.15);
+    background: var(--surface-container-low);
+    margin: 2.5rem 0;
+  }
+
+  .stat-callout-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .stat-callout-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-callout-desc {
+    font-size: 0.875rem;
+    color: var(--on-surface-variant);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar-card {
+    background: var(--surface-container-low);
+    border: 1px solid rgba(68,71,72,0.2);
+    padding: 1.5rem;
+  }
+
+  .sidebar-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: var(--on-surface);
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(196,199,199,0.5);
+    margin-top: 0.75rem;
+  }
+
+  /* ── Related grid ── */
+  .related-card {
+    border: 1px solid rgba(68,71,72,0.15);
+    background: #1c1b1b;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-card:hover {
+    border-color: rgba(255,186,55,0.25);
+  }
+
+  .related-card-img {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #222;
+  }
+
+  .related-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.3);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    opacity: 0.8;
+  }
+
+  .related-card:hover .related-card-img img {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+
+  .related-card-body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-card-cat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.15;
+    color: var(--on-surface);
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+
+  .related-card-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(196,199,199,0.45);
+    margin-top: 1rem;
+  }
+
+  /* ── Share bar ── */
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    border: 1px solid rgba(68,71,72,0.4);
+    padding: 0.5rem 1rem;
+    transition: border-color 0.2s, color 0.2s;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .share-btn:hover {
+    border-color: rgba(255,186,55,0.4);
+    color: var(--primary);
+  }
+
+  /* ── HUD corner decoration ── */
+  .hud-corner-tl {
+    position: absolute;
+    top: 0; left: 0;
+    width: 40px; height: 40px;
+    border-top: 1.5px solid rgba(255,186,55,0.4);
+    border-left: 1.5px solid rgba(255,186,55,0.4);
+    pointer-events: none;
+  }
+
+  .hud-corner-br {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 40px; height: 40px;
+    border-bottom: 1.5px solid rgba(255,186,55,0.4);
+    border-right: 1.5px solid rgba(255,186,55,0.4);
+    pointer-events: none;
+  }
+
+  /* ── Progress bar ── */
+  #reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--primary);
+    z-index: 100;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(255,186,55,0.5);
+    width: 0%;
+  }
+
+  /* ── Filler image placeholders ── */
+  .img-placeholder {
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,186,55,0.04) 0%, transparent 70%);
+  }
+
+  /* ── Animations ── */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fade-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  .fade-up:nth-child(1) { animation-delay: 0.05s; }
+  .fade-up:nth-child(2) { animation-delay: 0.15s; }
+  .fade-up:nth-child(3) { animation-delay: 0.25s; }
+  .fade-up:nth-child(4) { animation-delay: 0.35s; }
+  .fade-up:nth-child(5) { animation-delay: 0.45s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; animation: none; }
+  }
+</style>
+</head>
+
+<body class="selection:bg-primary selection:text-on-primary">
+
+<!-- Reading progress bar -->
+<div id="reading-progress"></div>
+
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#131313]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-b border-white/5">
+<a href="#" class="flex items-center gap-3">
+<img src="assets/anteam_logo.webp" alt="Anteam" class="h-8 w-auto"/>
+<span class="text-2xl font-bold tracking-tighter text-primary">Anteam</span>
+</a>
+<div class="hidden md:flex gap-10">
+<a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="#philosophy">Mission</a>
+<a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="#products">Products</a>
+<a class="font-headline tracking-widest uppercase text-sm text-[#C4C7C7] hover:text-primary transition-colors" href="news.html">News</a>
+</div>
+
+<a href="#contact" data-umami-event="cta_click" data-umami-event-location="nav" class="hidden md:inline-flex font-headline tracking-widest uppercase text-sm px-6 py-2 bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95">
+        Contact Us
+    </a>
+<button id="nav-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-[#C4C7C7] hover:text-primary transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+  <svg id="ham-svg" class="w-5 h-4" viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+    <line class="ham-line" x1="0" y1="2" x2="20" y2="2"/>
+    <line class="ham-line" x1="0" y1="8" x2="20" y2="8"/>
+    <line class="ham-line" x1="2" y1="14" x2="20" y2="14"/>
+  </svg>
+</button>
+</nav>
+<!-- Mobile nav overlay -->
+<div id="mobile-nav" class="fixed inset-0 z-40 bg-[#0e0e0e] flex flex-col items-center justify-center gap-10 pointer-events-none opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Navigation" aria-hidden="true">
+  <nav class="flex flex-col items-center gap-8">
+    <a class="mobile-nav-link font-headline tracking-widest uppercase text-3xl text-[#C4C7C7] hover:text-primary transition-colors" href="#philosophy" tabindex="-1">Mission</a>
+    <a class="mobile-nav-link font-headline tracking-widest uppercase text-3xl text-[#C4C7C7] hover:text-primary transition-colors" href="#products" tabindex="-1">Products</a>
+  </nav>
+  <a href="#contact" data-umami-event="cta_click" data-umami-event-location="mobile_nav" class="mobile-nav-link mt-6 font-headline tracking-widest uppercase text-sm px-12 py-4 bg-primary text-on-primary hover:brightness-110 transition-all font-bold" tabindex="-1">
+    Get in Touch
+  </a>
+</div>
+
+<!-- ── Article Hero ── -->
+<section class="article-hero pt-20">
+  <!-- Filler hero image via picsum -->
+  <img
+    class="article-hero-img"
+    src="https://picsum.photos/seed/logistics42/1920/1080"
+    alt="Aerial view of logistics hub at dusk with vehicle trails"
+  />
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-hud"></div>
+
+  <!-- Hero content -->
+  <div class="container mx-auto px-8 relative z-10 pb-16" style="max-width:1200px;">
+    <div class="max-w-4xl">
+      <h1 class="article-headline fade-up mb-6">
+        How AI Route Optimisation<br/>Is Reshaping the Future<br/><span style="color:var(--primary)">of Last-Mile Delivery</span>
+      </h1>
+      <p class="fade-up text-lg font-light leading-relaxed" style="color:var(--on-surface-variant);max-width:52ch;">
+        As logistics networks grow increasingly complex, AI-driven intelligence is proving to be the critical differentiator between operators who thrive and those who fall behind.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Meta bar ── -->
+<div class="container mx-auto px-8" style="max-width:1200px;">
+  <div class="meta-bar">
+    <div class="meta-item">
+      Published
+      <span>1 May 2026</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      Author
+      <span>Anteam Research Team</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div style="flex:1;"></div>
+    <!-- Share buttons -->
+    <div class="flex gap-2">
+      <button class="share-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        Share
+      </button>
+      <button class="share-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        Copy Link
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main content: article + sidebar ── -->
+<main class="container mx-auto px-8 py-16" style="max-width:1200px;">
+  <div style="display:grid;grid-template-columns:1fr 300px;gap:5rem;align-items:start;" class="article-grid">
+
+    <!-- ── Article body ── -->
+    <article>
+      <!-- Lead image -->
+      <div class="img-placeholder" style="aspect-ratio:16/9;margin-bottom:2.5rem;position:relative;">
+        <img
+          src="https://picsum.photos/seed/trucks99/1200/675"
+          alt="Convoy of autonomous logistics vehicles on a motorway at night"
+          style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.2) contrast(1.05);opacity:0.85;display:block;"
+        />
+        <div class="hud-corner-tl"></div>
+        <div class="hud-corner-br"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:rgba(0,0,0,0.5);font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(196,199,199,0.6);">
+          Fig. 01 — Automated freight convoy, East Midlands Distribution Network, 2025
+        </div>
+      </div>
+
+      <div class="article-body">
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+
+        <!-- Inline stat callout -->
+        <div class="stat-callout">
+          <div class="stat-callout-number">85%</div>
+          <div>
+            <div class="stat-callout-label">CO₂ Reduction</div>
+            <div class="stat-callout-desc">
+              Fewer empty legs and AI-matched consolidation routes deliver dramatic emissions cuts across validated NHS and pharmacy trials covering over 100,000 weekly deliveries.
+            </div>
+          </div>
+        </div>
+
+        <h2>The Scale of the Problem</h2>
+
+        <p>
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+        </p>
+
+        <p>
+          Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+        </p>
+
+        <!-- Pull quote -->
+        <blockquote class="pull-quote">
+          <p>The logistics sector doesn't lack data — it lacks the intelligence to act on it in real time. That gap is precisely where Anteam operates.</p>
+          <cite>— Anteam Research Team, 2026</cite>
+        </blockquote>
+
+        <h2>Where AI Makes the Difference</h2>
+
+        <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+        </p>
+
+        <h3>Real-Time Route Matching</h3>
+
+        <p>
+          Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+        </p>
+
+        <!-- Secondary image -->
+        <div class="img-placeholder" style="aspect-ratio:3/2;margin:2.5rem 0;position:relative;">
+          <img
+            src="https://picsum.photos/seed/warehouse14/900/600"
+            alt="Interior of a large logistics distribution warehouse with automated systems"
+            style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.25);opacity:0.8;display:block;"
+          />
+          <div class="hud-corner-tl"></div>
+          <div class="hud-corner-br"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:rgba(0,0,0,0.5);font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(196,199,199,0.6);">
+            Fig. 02 — Automated sortation facility, Midlands hub
+          </div>
+        </div>
+
+        <h3>Predictive Supplier Intelligence</h3>
+
+        <p>
+          Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+        </p>
+
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+
+        <h2>Looking Ahead</h2>
+
+        <p>
+          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.
+        </p>
+
+        <p>
+          Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.
+        </p>
+
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<!-- ── Footer (matches main site) ── -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#131313] border-t border-[#B5C8DF]/10">
+  <div class="flex flex-col items-center md:items-start gap-2">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/anteam_logo.webp" alt="Anteam" class="h-7 w-auto"/>
+      <span class="font-headline text-lg font-black text-primary">ANTEAM</span>
+    </a>
+    <div class="font-body text-xs tracking-wide text-[#C4C7C7]">© 2026 ANTEAM LTD</div>
+  </div>
+  <div class="flex flex-wrap justify-center gap-8">
+    <a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary transition-colors" href="index.html#philosophy">Mission</a>
+    <a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary transition-colors" href="index.html#products">Products</a>
+    <a class="font-body text-xs tracking-wide text-primary transition-colors" href="news.html">News</a>
+    <a class="font-body text-xs tracking-wide text-[#C4C7C7] hover:text-primary transition-colors" href="index.html#contact">Contact</a>
+    <a class="font-body text-xs tracking-wide text-[#C4C7C7] underline-offset-4 hover:underline transition-opacity opacity-80 hover:opacity-100" href="privacy-policy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+<script>
+  // Reading progress bar
+  (function() {
+    var bar = document.getElementById('reading-progress');
+    var article = document.querySelector('article');
+    if (!bar || !article) return;
+    function update() {
+      var rect = article.getBoundingClientRect();
+      var total = article.offsetHeight - window.innerHeight;
+      var scrolled = -rect.top;
+      var pct = Math.max(0, Math.min(100, (scrolled / total) * 100));
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // Nav scroll behaviour (matches main site)
+  (function() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 40) {
+        nav.classList.add('nav-scrolled');
+      } else {
+        nav.classList.remove('nav-scrolled');
+      }
+    }, { passive: true });
+  })();
+
+  // Copy link button
+  document.querySelectorAll('.share-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (this.textContent.includes('Copy')) {
+        navigator.clipboard.writeText(window.location.href).catch(function(){});
+        var orig = btn.textContent.trim();
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg> Copy Link'; }, 2000);
+      }
+    });
+  });
+
+  // Responsive: collapse sidebar on narrow screens
+  (function() {
+    var grid = document.querySelector('.article-grid');
+    if (!grid) return;
+    function check() {
+      if (window.innerWidth < 900) {
+        grid.style.gridTemplateColumns = '1fr';
+      } else {
+        grid.style.gridTemplateColumns = '1fr 300px';
+      }
+    }
+    window.addEventListener('resize', check);
+    check();
+
+    var rg = document.querySelector('.related-grid');
+    if (!rg) return;
+    function checkRg() {
+      if (window.innerWidth < 640) {
+        rg.style.gridTemplateColumns = '1fr';
+      } else if (window.innerWidth < 900) {
+        rg.style.gridTemplateColumns = 'repeat(2,1fr)';
+      } else {
+        rg.style.gridTemplateColumns = 'repeat(3,1fr)';
+      }
+    }
+    window.addEventListener('resize', checkRg);
+    checkRg();
+  })();
+</script>
+
+</body>
+</html>
